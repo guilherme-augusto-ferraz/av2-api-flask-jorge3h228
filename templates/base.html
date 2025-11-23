@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Compras — av2-api-flask</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Lista de Compras</h1>
+      {% if session.get('user_id') %}
+      <nav>
+        <a href="{{ url_for('compras.index') }}">Todas</a> |
+        <a href="{{ url_for('compras.index') }}?status=pendentes">Pendentes</a> |
+        <a href="{{ url_for('compras.index') }}?status=carrinho">Carrinho de Compras</a>
+      </nav>
+      <div class="user-area">
+        <span>Olá, {{ session.username }} | <a href="{{ url_for('compras.logout') }}">Logout</a></span>
+      </div>
+      {% else %}
+      <div class="user-area">
+        <a href="{{ url_for('compras.login') }}">Login</a>
+      </div>
+      {% endif %}
+    </header>
+    <main>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul class="flashes">
+          {% for category, msg in messages %}
+            <li class="flash {{ category }}">{{ msg }}</li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      <small>Lista de Compras</small>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+:root{
+	--primary: #ffd54f; /* yellow */
+	--primary-contrast: #222;
+	--danger: #e53935; /* red */
+	--success: #2e7d32; /* green for cart */
+	--bg: #fff8e1;
+	--muted: #6b6b6b;
+}
+
+*{box-sizing:border-box}
+body { font-family: 'Segoe UI', Roboto, Arial, Helvetica, sans-serif; background: linear-gradient(180deg,#fff9e6 0%, #fffdf5 100%); color:var(--primary-contrast); }
+main{max-width:980px;margin:28px auto;padding:22px}
+header{max-width:900px;margin:18px auto;padding:12px;text-align:center}
+header h1{margin:0 0 6px 0;color:var(--danger)}
+nav{margin-bottom:12px}
+nav a{color:var(--primary-contrast);text-decoration:none;padding:6px 10px;border-radius:6px;background:transparent;margin:0 6px}
+
+.compras-list { list-style: none; padding: 0; margin:0; display:grid; grid-template-columns: 1fr; gap:12px }
+.compra { display:flex; justify-content:space-between; align-items:center; padding:14px; border-radius:10px; background:rgba(255,255,255,0.6); margin-bottom:10px; box-shadow:0 2px 6px rgba(0,0,0,0.06);} 
+.compra.comprado { background: linear-gradient(90deg, rgba(46,125,50,0.12) 0%, rgba(46,125,50,0.08) 100%); border:1px solid rgba(46,125,50,0.14); color:var(--primary-contrast); }
+.compra .left { max-width:72%; }
+.compra .meta { font-size:0.9em; color:var(--muted); margin-top:6px }
+.actions { display:flex; gap:8px; }
+
+.cart-check{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--success);color:#fff;font-weight:700;margin-right:8px;box-shadow:0 2px 6px rgba(46,125,50,0.18)}
+
+.btn { text-decoration:none; padding:10px 14px; border-radius:10px; background:var(--primary); color:var(--primary-contrast); font-weight:700; box-shadow:0 4px 0 rgba(0,0,0,0.08); }
+.btn.small { font-size:0.9em; padding:6px 10px; }
+.btn.danger { background:var(--danger); color:#fff; box-shadow:0 3px 0 rgba(0,0,0,0.12);} 
+
+.add-form { margin-bottom:20px; background:rgba(255,255,255,0.7); padding:14px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.06);} 
+.add-form form div { margin-bottom:10px; display:flex; flex-direction:column; align-items:flex-start }
+.add-form label{font-weight:600;margin-bottom:6px}
+.add-form input[type="text"], .add-form input[type="number"], .add-form input[type="date"], .add-form input[type="email"], .add-form input[type="password"]{padding:10px;border-radius:8px;border:1px solid rgba(0,0,0,0.08);width:100%}
+
+/* form grid used by add/edit forms */
+.form-grid{display:grid;grid-template-columns:180px 1fr;gap:12px;align-items:center}
+.form-grid .field{display:flex;flex-direction:column}
+.form-grid .field.full{grid-column:1/-1}
+.form-grid label{font-weight:700;margin-bottom:6px}
+.actions-row{display:flex;gap:12px;align-items:center}
+
+/* Edit button style */
+.btn.edit{background:#1976d2;color:#fff;box-shadow:0 3px 0 rgba(0,0,0,0.12)}
+.btn.edit:hover{filter:brightness(0.98)}
+
+.flashes { list-style:none; padding:0; margin:10px 0 }
+.flash { padding:10px; border-radius:6px; margin-bottom:8px; max-width:900px; margin-left:auto;margin-right:auto }
+.flash.error { background: #fdecea; color:var(--danger); }
+.flash.success { background:#fff7db; color:#6b4d00 }
+
+.login, .register{max-width:480px;margin:20px auto;background:rgba(255,255,255,0.85);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.08);text-align:left}
+.login h2, .register h2{color:var(--danger)}
+
+footer{max-width:980px;margin:20px auto;text-align:center;color:var(--muted)}
+
+/* responsive */
+@media (max-width:800px){
+	main, header{padding:14px}
+	.add-form form{grid-template-columns:1fr}
+	.compra{flex-direction:column;align-items:flex-start}
+	.actions{margin-top:12px;width:100%;justify-content:flex-end}
+}
