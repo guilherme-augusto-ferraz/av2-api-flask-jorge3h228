@@ -1,9 +1,6 @@
 # av2-api-flask
 
 4. Estrutura do Projeto
-O projeto segue uma estrutura modular com boa organização de código.
-
-Sugestão de estrutura criada:
 
 ```
 app.py
@@ -224,9 +221,5 @@ Observação: a UI usa sessão enquanto a API usa JWT.
 - Em produção, definir `JWT_SECRET_KEY` via variável de ambiente e usar migrações com `Flask-Migrate`.
 - Adicionar proteção CSRF nas rotas que usam formulários (Flask-WTF).
 
----
 
-Se quiser, eu posso:
-- adicionar `Flask-Migrate` e instruções de migração;
-- gerar exemplos em Python usando a biblioteca `requests`;
-- ajustar o README para um formato em inglês também.
+
